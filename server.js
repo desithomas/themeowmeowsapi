@@ -89,12 +89,12 @@ app.get('/api/:kittyName', (request, response) => {
     if(theMeowMeows[kittyName]){
         response.json(theMeowMeows[kittyName])
     }else{
-        response.json(theMeowMeows['Unknown'])
+        response.json(theMeowMeows['unknown'])
     }
 })
 
 
 
-app.listen(PORT, () => {
+app.listen( process.env.PORT || PORT, () => {
     console.log(`The server is running on port ${PORT}, the cats are going to catch it!`)
 })
